@@ -1,0 +1,57 @@
+📄 README – Smart Screenshot to Word Document Tool
+This tool allows you to take screenshots manually using a hotkey and automatically inserts them into a Word document with a filename of your choice.
+
+✅ Features
+Press Ctrl + Shift + S to take a screenshot.
+
+Each screenshot is added to the Word document and saved in a local folder.
+
+Press Ctrl + Shift + Q to save and close the Word document.
+
+Prompts you to enter the file name once when the script starts.
+
+📌 Usage
+Run the script (either via smart_screenshot_to_doc.py or using run_screenshot.bat).
+
+When prompted:
+
+mathematica
+Copy
+Edit
+📝 Enter file name for Word document (without .docx):
+➤ Enter a name like DemoReport
+
+Press:
+
+🖼️ Ctrl + Shift + S → Takes a screenshot and inserts it into the document.
+
+🛑 Ctrl + Shift + Q → Saves the document and exits.
+
+Screenshots are saved in the screenshots/ folder.
+
+The Word document is saved in the same directory as the script.
+
+📦 Dependencies
+Install the required Python packages using pip:
+
+bash
+Copy
+Edit
+pip install keyboard pyautogui python-docx pillow
+These packages are used for:
+
+Package	Purpose
+keyboard	Listening for key combinations
+pyautogui	Capturing screenshots
+python-docx	Creating and editing Word files
+pillow	Image handling for doc insertion
+
+🛠 Optional: Batch File
+You can run the tool using run_screenshot.bat to avoid using the command line every time. The batch file simply executes the Python script:
+
+bat
+Copy
+Edit
+@echo off
+python smart_screenshot_to_doc.py
+pause
