@@ -5,7 +5,14 @@ import pyautogui
 from docx import Document
 from docx.shared import Inches
 
-# Setup
+# 📌 Ask user for Word document name
+file_name = input("📝 Enter file name for Word document (without .docx): ").strip()
+if not file_name:
+    file_name = "Screenshots_Report"
+
+output_file = file_name + ".docx"
+
+# Setup folders
 folder = "screenshots"
 os.makedirs(folder, exist_ok=True)
 
@@ -13,9 +20,9 @@ doc = Document()
 doc.add_heading("Screenshot Report", level=1)
 count = 1
 
-print("📸 Screenshot tool running in background...")
-print("🧷 Press Ctrl+Shift+S to take a screenshot.")
-print("🛑 Press Ctrl+Shift+Q to save and quit.\n")
+print("\n📸 Screenshot tool running...")
+print("🧷 Press Ctrl + Shift + S to take a screenshot.")
+print("🛑 Press Ctrl + Shift + Q to save and quit.\n")
 
 while True:
     if keyboard.is_pressed('ctrl+shift+s'):
@@ -32,9 +39,8 @@ while True:
             time.sleep(0.2)
 
     if keyboard.is_pressed('ctrl+shift+q'):
-        output_file = "Screenshots_Report.docx"
         doc.save(output_file)
-        print(f"\n📄 Document saved as: {output_file}")
+        print(f"\n📁 Word document saved as: {output_file}")
         print("👋 Exiting...")
         break
 
